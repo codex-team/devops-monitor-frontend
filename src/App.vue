@@ -17,6 +17,10 @@ import HelloWorld from './components/HelloWorld.vue';
     HelloWorld
   }
 })
+
+/**
+ * export class App
+ */
 export default class App extends Vue {}
 </script>
 
