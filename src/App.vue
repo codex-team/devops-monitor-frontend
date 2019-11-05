@@ -25,6 +25,8 @@ export default class App extends Vue {}
 </script>
 
 <style>
+@import "../node_modules/minireset.css/minireset.min.css";
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
