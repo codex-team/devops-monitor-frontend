@@ -1,0 +1,162 @@
+@import 'minireset.css';
+
+body {
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
+    color: #000000;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+}
+
+.wrapper {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.left-sidebar {
+    max-width: 300px;
+    margin-right: 40px;
+    padding-top: 1rem;
+    font-size: 16px;
+}
+
+.left-sidebar h2 {
+    font-weight: bold;
+    margin-bottom: 15px;;
+}
+
+.menu a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.servers-map {
+    border-left: 1px solid #e4e4e4;
+    padding-left: 50px;
+}
+
+.servers-map h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.servers {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ff000000;
+}
+
+.server {
+    border-radius: 6px;
+    box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.05);
+    border: solid 1px #e4e4e4;
+    width: 450px;
+    margin-bottom: 25px;
+    padding: 25px;
+    line-height: 1.6;
+}
+
+.server-header {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.server-title {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.server:nth-child(odd) {
+    margin-right: 25px;
+}
+
+.server-status {
+    display: inline-block;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: #e4e4e4;
+}
+
+.status-ok {
+    opacity: 0.6;
+    background-color: #059721;
+}
+
+.status-error {
+    opacity: 0.6;
+    background: #bf0000;
+}
+
+.server-ip {
+    font-size: 14px;
+    padding: 3.5px 0;
+    opacity: 0.6;
+    display: inline-block;
+}
+
+.physical-state {
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.state-storage {
+    margin-right: 20px;
+}
+
+.state-storage, .state-cpu {
+    opacity: 0.6;
+}
+
+.nginx {
+    margin-bottom: 25px;
+}
+
+.map-title {
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
+
+.nginx-apps span {
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+.offline {
+    opacity: 0.6;
+}
+
+.text-ok {
+    opacity: 0.6;
+    color: #059721;
+}
+
+.text-error {
+    opacity: 0.6;
+    color: #bf0000;
+}
+
+.services {
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.service-name {
+    margin-right: 10px;
+}
+
+.param-name {
+    margin-right: 10px;
+}
