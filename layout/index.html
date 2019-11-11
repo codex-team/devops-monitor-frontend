@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="left-sidebar">
+        <div class="sidebar">
             <h2 class="sidebar-title">CodeX DevOops</h2>
-            <div class="menu">
+            <div class="sidebar-menu">
                 <a href="#">Servers Map</a>
                 <a href="#">SSH keys</a>
             </div>
@@ -22,18 +22,18 @@
                 <div class="server">
                     <div class="server-header">
                         <span>
-                            <h2 class="server-title">codex-kepler</h2>
-                            <span class="server-status status-ok"></span>
+                            <h2 class="server-header-title">codex-kepler</h2>
+                            <span class="server-header-status background-ok"></span>
                         </span>
                         <div class="server-ip">15.213.199.12</div>
                     </div>
-                    <div class="physical-state">
-                        <span class="state-storage">Storage 28 GB / 30 GB</span>
-                        <span class="state-cpu">CPU load 12%</span>
+                    <div class="server-state">
+                        <span class="server-state-storage">Storage 28 GB / 30 GB</span>
+                        <span class="server-state-cpu">CPU load 12%</span>
                     </div>
-                    <div class="nginx">
-                        <h2 class="map-title">Nginx</h2>
-                        <div class="nginx-apps">
+                    <div class="server-nginx">
+                        <h2 class="server-nginx-title">Nginx</h2>
+                        <div class="server-nginx-apps">
                             <span>alpha.hawk.so</span>
                             <span class="offline">alpha.ifmo.su</span>
                             <span class="offline">difual.com</span>
@@ -43,67 +43,67 @@
                         </div>
                     </div>
                     <div class="services">
-                        <h2 class="map-title">Services</h2>
-                        <div class="service">
-                            <span class="service-name">MongoDB</span> 
-                            <span class="service-port text-ok">:2134</span>
+                        <h2 class="services-title">Services</h2>
+                        <div class="services-service">
+                            <span class="services-service-name">MongoDB</span> 
+                            <span class="services-service-port color-ok">:2134</span>
                         </div>
-                        <div class="service">
-                            <span class="service-name">Redis</span> 
-                            <span class="service-port text-error">:6000</span>
+                        <div class="services-service">
+                            <span class="services-service-name">Redis</span> 
+                            <span class="services-service-port color-error">:6000</span>
                         </div>
                     </div>
                     <div class="docker">
                         <h2 class="map-title">Docker</h2>
                         <div class="docker-param">
-                            <span class="param-name">cmtt_nginx</span>
-                            <span class="param-days text-ok">4d</span>
+                            <span class="docker-param-name">cmtt_nginx</span>
+                            <span class="docker-param-days color-ok">4d</span>
                         </div>
                         <div class="docker-param">
-                            <span class="param-name">cmtt_fpm</span>
-                            <span class="param-days text-ok">4d</span>
+                            <span class="docker-param-name">cmtt_fpm</span>
+                            <span class="docker-param-days color-ok">4d</span>
                         </div>
                     </div>
                 </div>
                 <div class="server">
                     <div class="server-header">
                         <span>
-                            <h2 class="server-title">codex-neptune</h2>
-                            <span class="server-status status-error"></span>
+                            <h2 class="server-header-title">codex-neptune</h2>
+                            <span class="server-header-status background-error"></span>
                         </span>
                         <div class="server-ip">95.213.227.145</div>
                     </div>
-                    <div class="physical-state">
-                        <span class="state-storage">Storage 12 GB / 30 GB</span>
-                        <span class="state-cpu">CPU load 12%</span>
+                    <div class="server-state">
+                        <span class="server-state-storage">Storage 12 GB / 30 GB</span>
+                        <span class="server-state-cpu">CPU load 12%</span>
                     </div>
-                    <div class="nginx">
-                        <h2 class="map-title">Nginx</h2>
-                        <div class="nginx-apps">
+                    <div class="server-nginx">
+                        <h2 class="server-nginx-title">Nginx</h2>
+                        <div class="server-nginx-apps">
                             <span>workers.hawk.so</span>
                             <span>stage.hawk.so</span>
                         </div>
                     </div>
                     <div class="services">
-                        <h2 class="map-title">Services</h2>
-                        <div class="service">
-                            <span class="service-name">MongoDB</span> 
-                            <span class="service-port text-ok">:2134</span>
+                        <h2 class="services-title">Services</h2>
+                        <div class="services-service">
+                            <span class="services-service-name">MongoDB</span> 
+                            <span class="services-service-port color-ok">:2134</span>
                         </div>
-                        <div class="service">
-                            <span class="service-name">Redis</span> 
-                            <span class="service-port text-error">:6000</span>
+                        <div class="services-service">
+                            <span class="services-service-name">Redis</span> 
+                            <span class="services-service-port color-error">:6000</span>
                         </div>
                     </div>
                     <div class="docker">
-                        <h2 class="map-title">Docker</h2>
+                        <h2 class="docker-title">Docker</h2>
                         <div class="docker-param">
-                            <span class="param-name">hawk_workers</span>
-                            <span class="param-days text-ok">16d</span>
+                            <span class="docker-param-name">hawk_workers</span>
+                            <span class="docker-param-days color-ok">16d</span>
                         </div>
                         <div class="docker-param">
-                            <span class="param-name">hawk_collector</span>
-                            <span class="param-days text-ok">16d</span>
+                            <span class="docker-param-name">hawk_collector</span>
+                            <span class="docker-param-days color-ok">16d</span>
                         </div>
                     </div>
                 </div>

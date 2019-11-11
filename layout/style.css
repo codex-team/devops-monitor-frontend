@@ -17,19 +17,19 @@ a {
     justify-content: center;
 }
 
-.left-sidebar {
-    max-width: 300px;
+.sidebar {
+    max-width: 200px;
     margin-right: 40px;
     padding-top: 1rem;
     font-size: 16px;
 }
 
-.left-sidebar h2 {
+.sidebar-title {
     font-weight: bold;
-    margin-bottom: 15px;;
+    margin-bottom: 15px;
 }
 
-.menu a {
+.sidebar-menu a {
     display: block;
     margin-bottom: 10px;
 }
@@ -56,6 +56,7 @@ a {
     box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.05);
     border: solid 1px #e4e4e4;
     width: 450px;
+    min-width: 250px;
     margin-bottom: 25px;
     padding: 25px;
     line-height: 1.6;
@@ -68,7 +69,7 @@ a {
     margin-bottom: 15px;
 }
 
-.server-title {
+.server-header-title {
     display: inline-block;
     margin-right: 10px;
     font-size: 18px;
@@ -79,7 +80,7 @@ a {
     margin-right: 25px;
 }
 
-.server-status {
+.server-header-status {
     display: inline-block;
     border-radius: 50%;
     width: 10px;
@@ -87,12 +88,12 @@ a {
     background-color: #e4e4e4;
 }
 
-.status-ok {
+.background-ok {
     opacity: 0.6;
-    background-color: #059721;
+    background: #059721;
 }
 
-.status-error {
+.background-error {
     opacity: 0.6;
     background: #bf0000;
 }
@@ -104,24 +105,24 @@ a {
     display: inline-block;
 }
 
-.physical-state {
+.server-state {
     margin-bottom: 25px;
     font-size: 14px;
 }
 
-.state-storage {
+.server-state-storage {
     margin-right: 20px;
 }
 
-.state-storage, .state-cpu {
+.server-state-storage, .server-state-cpu {
     opacity: 0.6;
 }
 
-.nginx {
+.server-nginx {
     margin-bottom: 25px;
 }
 
-.map-title {
+.server-nginx-title {
     margin-bottom: 15px;
     font-size: 12px;
     font-weight: 600;
@@ -129,7 +130,7 @@ a {
     text-transform: uppercase;
 }
 
-.nginx-apps span {
+.server-nginx-apps span {
     font-size: 13px;
     margin-right: 10px;
 }
@@ -138,12 +139,12 @@ a {
     opacity: 0.6;
 }
 
-.text-ok {
+.color-ok {
     opacity: 0.6;
     color: #059721;
 }
 
-.text-error {
+.color-error {
     opacity: 0.6;
     color: #bf0000;
 }
@@ -153,10 +154,10 @@ a {
     margin-bottom: 25px;
 }
 
-.service-name {
+.services-service-name {
     margin-right: 10px;
 }
 
-.param-name {
+.docker-param-name {
     margin-right: 10px;
 }
