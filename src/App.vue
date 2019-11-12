@@ -11,9 +11,9 @@
       <h1>Servers Map</h1>
       <div class="server">
         <div class="server__header">
-          <h2 class="server__header_title">codex-kepler</h2>
-          <span class="server__header_status background_ok"></span>
-          <div class="server__header_ip">15.213.199.12</div>
+          <h2 class="server__header-title">codex-kepler</h2>
+          <span class="server__header-status server__header-status-background--ok"></span>
+          <div class="server__header-ip">15.213.199.12</div>
         </div>
         <div class="state">
           <span class="state__storage">Storage 28 GB / 30 GB</span>
@@ -33,35 +33,35 @@
         <div class="section">
           <h2 class="section__title">Services</h2>
           <div class="section__service">
-            <span class="section__service_name">MongoDB</span>
-            <span class="section__service_port_color_ok">:2134</span>
+            <span class="section__service-name">MongoDB</span>
+            <span class="section__service-port-color--ok">:2134</span>
           </div>
           <div class="section__service">
-            <span class="section__service_name">Redis</span>
-            <span class="section__service_port_color_error">:6000</span>
+            <span class="section__service-name">Redis</span>
+            <span class="section__service-port-color--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
           <div class="section__param">
-            <span class="section__param_name">cmtt_section</span>
-            <span class="section__param_days_color_ok">4d</span>
+            <span class="section__param-name">cmtt_section</span>
+            <span class="section__param-days-color--ok">4d</span>
           </div>
           <div class="section__param">
-            <span class="section__param_name">cmtt_fpm</span>
-            <span class="section__param_days_color_ok">4d</span>
+            <span class="section__param-name">cmtt_fpm</span>
+            <span class="section__param-days-color--ok">4d</span>
           </div>
         </div>
       </div>
       <div class="server">
         <div class="server__header">
-          <h2 class="server__header_title">codex-neptune</h2>
-          <span class="server__header_status server__header_status_background_error"></span>
-          <div class="server__header_ip">95.213.227.145</div>
+          <h2 class="server__header-title">codex-neptune</h2>
+          <span class="server__header-status server__header-status-background--error"></span>
+          <div class="server__header-ip">95.213.227.145</div>
         </div>
         <div class="state">
           <span class="state__storage">Storage 12 GB / 30 GB</span>
-          <span class="state__cpu state__cpu_color_error">CPU load 99%</span>
+          <span class="state__cpu state__cpu-color--error">CPU load 99%</span>
         </div>
         <div class="section">
           <h2 class="section__title">Nginx</h2>
@@ -73,23 +73,23 @@
         <div class="section">
           <h2 class="section__title">Services</h2>
           <div class="section__service">
-            <span class="section__service_name">MongoDB</span>
-            <span class="section__service_port_color_ok">:2134</span>
+            <span class="section__service-name">MongoDB</span>
+            <span class="section__service-port-color--ok">:2134</span>
           </div>
           <div class="section__service">
-            <span class="section__service_name">Redis</span>
-            <span class="section__service_port_color_error">:6000</span>
+            <span class="section__service-name">Redis</span>
+            <span class="section__service-port-color--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
           <div class="section__param">
-            <span class="section__param_name">hawk_workers</span>
-            <span class="section__param_days_color_ok">16d</span>
+            <span class="section__param-name">hawk_workers</span>
+            <span class="section__param-days-color--ok">16d</span>
           </div>
           <div class="section__param">
-            <span class="section__param_name">hawk_collection</span>
-            <span class="section__param_days_color_ok">16d</span>
+            <span class="section__param-name">hawk_collection</span>
+            <span class="section__param-days-color--ok">16d</span>
           </div>
         </div>
       </div>
@@ -175,7 +175,7 @@ a {
   margin-bottom: 15px;
 }
 
-.server__header_title {
+.server__header-title {
   display: inline-block;
   margin-right: 10px;
   font-size: 18px;
@@ -186,7 +186,7 @@ a {
   margin-right: 25px;
 }
 
-.server__header_status {
+.server__header-status {
   display: inline-block;
   border-radius: 50%;
   width: 10px;
@@ -194,17 +194,17 @@ a {
   background-color: #e4e4e4;
 }
 
-.background_ok {
+.server__header-status-background--ok {
   opacity: 0.6;
   background: #059721;
 }
 
-.server__header_status_background_error {
+.server__header-status-background--error {
   opacity: 0.6;
   background: #bf0000;
 }
 
-.server__header_ip {
+.server__header-ip {
   margin-left: auto;
   font-size: 14px;
   opacity: 0.6;
@@ -225,7 +225,7 @@ a {
   opacity: 0.6;
 }
 
-.state__cpu_color_error {
+.state__cpu-color--error {
   color: #bf0000;
 }
 
@@ -257,11 +257,11 @@ a {
   margin-bottom: 9px;
 }
 
-.section__service_name {
+.section__service-name {
   margin-right: 10px;
 }
 
-.section__param_name {
+.section__param-name {
   margin-right: 10px;
 }
 
@@ -269,21 +269,21 @@ a {
   opacity: 0.6;
 }
 
-.section__service_port_color_ok {
+.section__service-port-color--ok {
   opacity: 0.6;
   color: #059721;
 }
 
-.section__service_port_color_error {
+.section__service-port-color--error {
   opacity: 0.6;
   color: #bf0000;
 }
 
-.section__param_days_color_ok {
+.section__param-days-color--ok {
   color: #059721;
 }
 
-.section__param_days_color_error {
+.section__param-days-color--error {
   color: #bf0000;
 }
 </style>
