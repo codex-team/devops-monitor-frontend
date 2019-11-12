@@ -34,22 +34,22 @@
           <h2 class="section__title">Services</h2>
           <div class="section__service">
             <span class="section__service-name">MongoDB</span>
-            <span class="section__service-port--ok">:2134</span>
+            <span class="section__status--ok">:2134</span>
           </div>
           <div class="section__service">
             <span class="section__service-name">Redis</span>
-            <span class="section__service-port--error">:6000</span>
+            <span class="section__status--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
           <div class="section__param">
             <span class="section__param-name">cmtt_section</span>
-            <span class="section__param-days--ok">4d</span>
+            <span class="section__status--ok">4d</span>
           </div>
           <div class="section__param">
             <span class="section__param-name">cmtt_fpm</span>
-            <span class="section__param-days--ok">4d</span>
+            <span class="section__status--ok">4d</span>
           </div>
         </div>
       </div>
@@ -74,22 +74,22 @@
           <h2 class="section__title">Services</h2>
           <div class="section__service">
             <span class="section__service-name">MongoDB</span>
-            <span class="section__service-port--ok">:2134</span>
+            <span class="section__status--ok">:2134</span>
           </div>
           <div class="section__service">
             <span class="section__service-name">Redis</span>
-            <span class="section__service-port--error">:6000</span>
+            <span class="section__status--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
           <div class="section__param">
             <span class="section__param-name">hawk_workers</span>
-            <span class="section__param-days--ok">16d</span>
+            <span class="section__status--ok">16d</span>
           </div>
           <div class="section__param">
             <span class="section__param-name">hawk_collection</span>
-            <span class="section__param-days--ok">16d</span>
+            <span class="section__status--ok">16d</span>
           </div>
         </div>
       </div>
@@ -269,21 +269,13 @@ a {
   opacity: 0.6;
 }
 
-.section__service-port--ok {
+.section__status--ok {
   opacity: 0.6;
   color: #059721;
 }
 
-.section__service-port--error {
+.section__status--error {
   opacity: 0.6;
-  color: #bf0000;
-}
-
-.section__param-days--ok {
-  color: #059721;
-}
-
-.section__param-days--error {
   color: #bf0000;
 }
 </style>
