@@ -132,7 +132,7 @@ a {
 }
 
 .sidebar {
-  max-width: 200px;
+  min-width: 80px;
   margin-right: 40px;
   padding-top: 1rem;
   font-size: 16px;
@@ -248,6 +248,7 @@ a {
 }
 
 .nginx-apps span {
+  display: inline-block;
   font-size: 13px;
   margin-right: 10px;
 }
