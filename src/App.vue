@@ -1,30 +1,30 @@
 <template>
   <div class="app">
     <div class="sidebar">
-      <h2 class="sidebar-title">CodeX DevOops</h2>
-      <div class="sidebar-menu">
+      <h2 class="sidebar__title">CodeX DevOops</h2>
+      <div class="sidebar__menu">
         <a href="#">Servers Map</a>
         <a href="#">SSH keys</a>
       </div>
     </div>
-    <div class="servers-map">
+    <div class="servers_map">
       <h1>Servers Map</h1>
       <div class="servers">
         <div class="server">
-          <div class="header">
+          <div class="server__header">
             <span>
-              <h2 class="header-title">codex-kepler</h2>
-              <span class="header-status background-ok"></span>
+              <h2 class="server__header_title">codex-kepler</h2>
+              <span class="server__header_status background_ok"></span>
             </span>
-            <div class="header-ip">15.213.199.12</div>
+            <div class="server__header_ip">15.213.199.12</div>
           </div>
           <div class="state">
-            <span class="state-storage">Storage 28 GB / 30 GB</span>
-            <span class="state-cpu">CPU load 12%</span>
+            <span class="state__storage">Storage 28 GB / 30 GB</span>
+            <span class="state__cpu">CPU load 12%</span>
           </div>
-          <div class="nginx">
-            <h2 class="nginx-title">Nginx</h2>
-            <div class="nginx-apps">
+          <div class="section">
+            <h2 class="section__title">Nginx</h2>
+            <div class="section__apps">
               <span>alpha.hawk.so</span>
               <span class="offline">alpha.ifmo.su</span>
               <span class="offline">difual.com</span>
@@ -33,68 +33,68 @@
               <span>ifmo.su</span>
             </div>
           </div>
-          <div class="services">
-            <h2 class="services-title">Services</h2>
-            <div class="services-service">
-              <span class="services-service-name">MongoDB</span>
-              <span class="services-service-port color-ok">:2134</span>
+          <div class="section">
+            <h2 class="section__title">Services</h2>
+            <div class="section__service">
+              <span class="section__service_name">MongoDB</span>
+              <span class="section__service_port_color_ok">:2134</span>
             </div>
-            <div class="services-service">
-              <span class="services-service-name">Redis</span>
-              <span class="services-service-port color-error">:6000</span>
+            <div class="section__service">
+              <span class="section__service_name">Redis</span>
+              <span class="section__service_port_color_error">:6000</span>
             </div>
           </div>
-          <div class="docker">
-            <h2 class="docker-title">Docker</h2>
-            <div class="docker-param">
-              <span class="docker-param-name">cmtt_nginx</span>
-              <span class="docker-param-days color-ok">4d</span>
+          <div class="section">
+            <h2 class="section__title">Docker</h2>
+            <div class="section__param">
+              <span class="section__param_name">cmtt_section</span>
+              <span class="section__param_days_color_ok">4d</span>
             </div>
-            <div class="docker-param">
-              <span class="docker-param-name">cmtt_fpm</span>
-              <span class="docker-param-days color-ok">4d</span>
+            <div class="section__param">
+              <span class="section__param_name">cmtt_fpm</span>
+              <span class="section__param_days_color_ok">4d</span>
             </div>
           </div>
         </div>
         <div class="server">
-          <div class="header">
+          <div class="server__header">
             <span>
-              <h2 class="header-title">codex-neptune</h2>
-              <span class="header-status background-error"></span>
+              <h2 class="server__header_title">codex-neptune</h2>
+              <span class="server__header_status server__header_status_background_error"></span>
             </span>
-            <div class="header-ip">95.213.227.145</div>
+            <div class="server__header_ip">95.213.227.145</div>
           </div>
           <div class="state">
-            <span class="state-storage">Storage 12 GB / 30 GB</span>
-            <span class="state-cpu">CPU load 12%</span>
+            <span class="state__storage">Storage 12 GB / 30 GB</span>
+            <span class="state__cpu state__cpu_color_error">CPU load 99%</span>
           </div>
-          <div class="nginx">
-            <h2 class="nginx-title">Nginx</h2>
-            <div class="nginx-apps">
+          <div class="section">
+            <h2 class="section__title">Nginx</h2>
+            <div class="section__apps">
               <span>workers.hawk.so</span>
-              <span>stage.hawk.so</span>
+              <span>stage.hawk.su</span>
             </div>
           </div>
-          <div class="services">
-            <h2 class="services-title">Services</h2>
-            <div class="services-service">
-              <span class="services-service-name">MongoDB</span>
-              <span class="services-service-port color-ok">:2134</span>
+          <div class="section">
+            <h2 class="section__title">Services</h2>
+            <div class="section__service">
+              <span class="section__service_name">MongoDB</span>
+              <span class="section__service_port_color_ok">:2134</span>
             </div>
-            <div class="services-service">
-              <span class="services-service-name">Redis</span>
-              <span class="services-service-port color-error">:6000</span>
+            <div class="section__service">
+              <span class="section__service_name">Redis</span>
+              <span class="section__service_port_color_error">:6000</span>
             </div>
           </div>
-          <div class="docker">
-            <h2 class="docker-title">Docker</h2>
-            <div class="docker-param">
-              <span class="docker-param-name">hawk_workers</span>
-              <span class="docker-param-days color-ok">16d</span>
+          <div class="section">
+            <h2 class="section__title">Docker</h2>
+            <div class="section__param">
+              <span class="section__param_name">hawk_workers</span>
+              <span class="section__param_days_color_ok">16d</span>
             </div>
-            <div class="docker-param">
-              <span class="docker-param-name">hawk_collector</span>
-              <span class="docker-param-days color-ok">16d</span>
+            <div class="section__param">
+              <span class="section__param_name">hawk_collection</span>
+              <span class="section__param_days_color_ok">16d</span>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue } from 'vue-property-decorator';
 
 // import Server from "./components/Server.vue";
 
@@ -119,7 +119,7 @@ export default class App extends Vue {}
 
 .app {
   font-family: Roboto, sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   color: #000000;
   padding: 30px;
   display: flex;
@@ -138,22 +138,22 @@ a {
   font-size: 16px;
 }
 
-.sidebar-title {
+.sidebar__title {
   font-weight: bold;
   margin-bottom: 15px;
 }
 
-.sidebar-menu a {
+.sidebar__menu a {
   display: block;
   margin-bottom: 10px;
 }
 
-.servers-map {
+.servers_map {
   border-left: 1px solid #e4e4e4;
   padding-left: 50px;
 }
 
-.servers-map h1 {
+.servers_map h1 {
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 20px;
@@ -176,14 +176,14 @@ a {
   line-height: 1.6;
 }
 
-.header {
+.server__header {
   display: flex;
   justify-content: space-between;
   overflow: hidden;
   margin-bottom: 15px;
 }
 
-.header-title {
+.server__header_title {
   display: inline-block;
   margin-right: 10px;
   font-size: 18px;
@@ -194,7 +194,7 @@ a {
   margin-right: 25px;
 }
 
-.header-status {
+.server__header_status {
   display: inline-block;
   border-radius: 50%;
   width: 10px;
@@ -202,17 +202,17 @@ a {
   background-color: #e4e4e4;
 }
 
-.background-ok {
+.background_ok {
   opacity: 0.6;
   background: #059721;
 }
 
-.background-error {
+.server__header_status_background_error {
   opacity: 0.6;
   background: #bf0000;
 }
 
-.header-ip {
+.server__header_ip {
   font-size: 14px;
   padding: 3.5px 0;
   opacity: 0.6;
@@ -224,22 +224,30 @@ a {
   font-size: 14px;
 }
 
-.state-storage {
+.state__storage {
   margin-right: 20px;
 }
 
-.state-storage,
-.state-cpu {
+.state__storage,
+.state__cpu {
   opacity: 0.6;
 }
 
-.nginx {
+.state__cpu_color_error {
+  color: #bf0000;
+}
+
+.section {
+  font-size: 13px;
   margin-bottom: 25px;
 }
 
-.nginx-title,
-.services-title,
-.docker-title {
+.section__apps span {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.section__title {
   margin-bottom: 15px;
   font-size: 12px;
   font-weight: 600;
@@ -247,9 +255,11 @@ a {
   text-transform: uppercase;
 }
 
-.nginx-apps span {
-  display: inline-block;
-  font-size: 13px;
+.section__service_name {
+  margin-right: 10px;
+}
+
+.section__param_name {
   margin-right: 10px;
 }
 
@@ -257,26 +267,16 @@ a {
   opacity: 0.6;
 }
 
-.color-ok {
+.section__service_port_color_ok,
+.section__param_days_color_ok {
   opacity: 0.6;
   color: #059721;
 }
 
-.color-error {
+.section__service_port_color_error,
+.section__param_days_color_error {
   opacity: 0.6;
   color: #bf0000;
 }
 
-.services {
-  font-size: 13px;
-  margin-bottom: 25px;
-}
-
-.services-service-name {
-  margin-right: 10px;
-}
-
-.docker-param-name {
-  margin-right: 10px;
-}
 </style>
