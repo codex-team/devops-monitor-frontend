@@ -23,8 +23,8 @@
           <h2 class="section__title">Nginx</h2>
           <div class="section__apps">
             <span>alpha.hawk.so</span>
-            <span class="offline">alpha.ifmo.su</span>
-            <span class="offline">difual.com</span>
+            <span class="section__apps-site--offline">alpha.ifmo.su</span>
+            <span class="section__apps-site--offline">difual.com</span>
             <span>editorjs.io</span>
             <span>hawk.so</span>
             <span>ifmo.su</span>
@@ -34,22 +34,22 @@
           <h2 class="section__title">Services</h2>
           <div class="section__service">
             <span class="section__service-name">MongoDB</span>
-            <span class="section__status--ok">:2134</span>
+            <span class="section__container-status section__container-status--ok">:2134</span>
           </div>
           <div class="section__service">
             <span class="section__service-name">Redis</span>
-            <span class="section__status--error">:6000</span>
+            <span class="section__container-status section__container-status--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
-          <div class="section__param">
-            <span class="section__param-name">cmtt_section</span>
-            <span class="section__status--ok">4d</span>
+          <div class="section__container">
+            <span class="section__container-name">cmtt_section</span>
+            <span class="section__container-status section__container-status--ok">4d</span>
           </div>
-          <div class="section__param">
-            <span class="section__param-name">cmtt_fpm</span>
-            <span class="section__status--ok">4d</span>
+          <div class="section__container">
+            <span class="section__container-name">cmtt_fpm</span>
+            <span class="section__container-status section__container-status--ok">4d</span>
           </div>
         </div>
       </div>
@@ -74,22 +74,22 @@
           <h2 class="section__title">Services</h2>
           <div class="section__service">
             <span class="section__service-name">MongoDB</span>
-            <span class="section__status--ok">:2134</span>
+            <span class="section__container-status section__container-status--ok">:2134</span>
           </div>
           <div class="section__service">
             <span class="section__service-name">Redis</span>
-            <span class="section__status--error">:6000</span>
+            <span class="section__container-status section__container-status--error">:6000</span>
           </div>
         </div>
         <div class="section">
           <h2 class="section__title">Docker</h2>
-          <div class="section__param">
-            <span class="section__param-name">hawk_workers</span>
-            <span class="section__status--ok">16d</span>
+          <div class="section__container">
+            <span class="section__container-name">hawk_workers</span>
+            <span class="section__container-status section__container-status--ok">16d</span>
           </div>
-          <div class="section__param">
-            <span class="section__param-name">hawk_collection</span>
-            <span class="section__status--ok">16d</span>
+          <div class="section__container">
+            <span class="section__container-name">hawk_collection</span>
+            <span class="section__container-status section__container-status--ok">16d</span>
           </div>
         </div>
       </div>
@@ -110,7 +110,6 @@ export default class App extends Vue {}
 
 <style>
 @import "~minireset.css/minireset.min.css";
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,900&display=swap');
 
 .app {
   font-family: Roboto, sans-serif;
@@ -253,7 +252,7 @@ a {
 }
 
 .section__service,
-.section__param {
+.section__container {
   margin-bottom: 9px;
 }
 
@@ -261,20 +260,20 @@ a {
   margin-right: 10px;
 }
 
-.section__param-name {
+.section__container-name {
   margin-right: 10px;
 }
 
-.offline {
+.section__apps-site--offline {
   opacity: 0.6;
 }
 
-.section__status--ok {
+.section__container-status--ok {
   opacity: 0.6;
   color: #059721;
 }
 
-.section__status--error {
+.section__container-status--error {
   opacity: 0.6;
   color: #bf0000;
 }
