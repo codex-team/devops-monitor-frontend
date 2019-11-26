@@ -3,7 +3,7 @@
     <Sidebar />
     <div class="servers-map">
       <h1>Servers Map</h1>
-      <Server/>
+      <Server />
     </div>
   </div>
 </template>

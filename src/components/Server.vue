@@ -46,15 +46,31 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import Vue from "vue";
+import Component from "vue-class-component";
+import { State, Action, Getter } from "vuex-class";
+import { ServerState, Server } from "../store/server/types";
+const namespace: string = "server";
 
 @Component
-
 /**
- * export class Server
+ * export server
  */
-export default class Server extends Vue {}
+export default class ServerDetail extends Vue {
+  @State("server")
+  profile: ServerState | undefined;
+  @Action("fetchData", { namespace })
+  fetchData: any;
+  @Getter("returnServer", { namespace })
+  serversBack: string | undefined;
 
+  mounted() {
+    /**
+     * use sockets or something else
+     * this.fetchData();
+     */
+  }
+}
 </script>
 
 <style scoped>

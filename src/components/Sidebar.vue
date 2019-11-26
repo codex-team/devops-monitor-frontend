@@ -1,6 +1,8 @@
 <template>
   <div class="sidebar">
-    <h2 class="sidebar__title">{{ header }}</h2>
+    <h2 class="sidebar__title">
+      {{ header }}
+    </h2>
     <div class="sidebar__menu">
       <a href="#">Servers Map</a>
       <a href="#">SSH keys</a>
@@ -9,7 +11,7 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 
@@ -17,7 +19,7 @@ import { Component, Prop, Vue } from "vue-property-decorator";
  * export class Sidebar
  */
 export default class Sidebar extends Vue {
-  public header: string = "CodeX DevOps";
+  public header: string = 'CodeX DevOps';
 }
 </script>
 
