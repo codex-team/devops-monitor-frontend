@@ -8,7 +8,7 @@ const mutations: MutationTree<ServerModuleState> = {
    * @param serversList
    */
   setServersList(state, serversList: Server[]) {
-    state.servers = serversList;
+    state.list = serversList;
   }
 };
 
