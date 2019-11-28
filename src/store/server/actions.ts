@@ -9,16 +9,15 @@ import { RootState } from '../types';
 export const actions: ActionTree<ServerState, RootState> = {
 
   fetchData({ commit }): any {
+    commit('serverLoaded', { serverHeader: 'codex-kepler' });
     axios({
       url: 'https://....'
     }).then((response) => {
       const payload: Server = response && response.data;
-
       commit('serverLoaded', payload);
     }, (error) => {
       console.log(error);
       commit('loadingError');
     });
   }
-
 };

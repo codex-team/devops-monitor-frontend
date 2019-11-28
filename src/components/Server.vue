@@ -1,16 +1,22 @@
 <template>
   <div class="server">
     <div class="server__header">
-      <h2 class="server__header-title">codex-kepler</h2>
+      <h2 class="server__header-title">
+        {{ this.server.server.serverHeader }}
+      </h2>
       <span class="server__header-status server__header-status--ok" />
-      <div class="server__header-ip">15.213.199.12</div>
+      <div class="server__header-ip">
+        15.213.199.12
+      </div>
     </div>
     <div class="state">
       <span class="state__storage">Storage 28 GB / 30 GB</span>
       <span class="state__cpu">CPU load 12%</span>
     </div>
     <div class="section">
-      <h2 class="section__title">Nginx</h2>
+      <h2 class="section__title">
+        Nginx
+      </h2>
       <div class="section__apps">
         <span>alpha.hawk.so</span>
         <span class="section__apps-site--offline">alpha.ifmo.su</span>
@@ -21,7 +27,9 @@
       </div>
     </div>
     <div class="section">
-      <h2 class="section__title">Services</h2>
+      <h2 class="section__title">
+        Services
+      </h2>
       <div class="section__service">
         <span class="section__service-name">MongoDB</span>
         <span class="section__container-status section__container-status--ok">:2134</span>
@@ -32,7 +40,9 @@
       </div>
     </div>
     <div class="section">
-      <h2 class="section__title">Docker</h2>
+      <h2 class="section__title">
+        Docker
+      </h2>
       <div class="section__container">
         <span class="section__container-name">cmtt_section</span>
         <span class="section__container-status section__container-status--ok">4d</span>
@@ -46,29 +56,30 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
-import Component from "vue-class-component";
-import { State, Action, Getter } from "vuex-class";
-import { ServerState, Server } from "../store/server/types";
-const namespace: string = "server";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { State, Action, Getter } from 'vuex-class';
+import { ServerState, Server } from '../store/server/types';
+const namespace: string = 'server';
 
 @Component
 /**
  * export server
  */
 export default class ServerDetail extends Vue {
-  @State("server")
-  profile: ServerState | undefined;
-  @Action("fetchData", { namespace })
+  @State('server')
+  server: ServerState | undefined;
+
+  @Action('fetchData', { namespace })
   fetchData: any;
-  @Getter("returnServer", { namespace })
+
+  @Getter('returnServer', { namespace })
   serversBack: string | undefined;
 
+  /**
+   * do mount
+   */
   mounted() {
-    /**
-     * use sockets or something else
-     * this.fetchData();
-     */
+    this.fetchData();
   }
 }
 </script>
