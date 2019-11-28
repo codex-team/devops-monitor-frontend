@@ -3,7 +3,11 @@
     <Sidebar />
     <div class="servers-map">
       <h1>Servers Map</h1>
-      <Server />
+      <Server
+        v-for="(server, index) in servers.list"
+        :key="index"
+        :server="server"
+      />
     </div>
   </div>
 </template>
@@ -12,6 +16,8 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Sidebar from './components/Sidebar.vue';
 import Server from './components/Server.vue';
+import { State } from 'vuex-class';
+import { ServerModuleState } from '@/store/servers/types';
 
 @Component({
   components: {
@@ -19,11 +25,13 @@ import Server from './components/Server.vue';
     Server
   }
 })
-
 /**
- * export class App
+ * App component
  */
-export default class App extends Vue {}
+export default class App extends Vue {
+  @State('servers')
+  servers: ServerModuleState | undefined;
+}
 </script>
 
 <style>

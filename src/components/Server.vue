@@ -2,7 +2,7 @@
   <div class="server">
     <div class="server__header">
       <h2 class="server__header-title">
-        {{ this.server.server.serverHeader }}
+        {{ server.name }}
       </h2>
       <span class="server__header-status server__header-status--ok" />
       <div class="server__header-ip">
@@ -57,34 +57,25 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
-import { State, Action, Getter } from 'vuex-class';
-import { ServerState, Server } from '../store/server/types';
-const namespace: string = 'server';
+import { Server } from '@/store/servers/types';
 
 @Component
 /**
- * export server
+ * Component for displaying server info
  */
 export default class ServerDetail extends Vue {
-  @State('server')
-  server: ServerState | undefined;
-
-  @Action('fetchData', { namespace })
-  fetchData: any;
-
-  @Getter('returnServer', { namespace })
-  serversBack: string | undefined;
-
+  @Prop({
+    type: Object,
+    required: true
+  })
   /**
-   * do mount
+   * Server to display
    */
-  mounted() {
-    this.fetchData();
-  }
+  readonly server: Server | undefined;
 }
 </script>
 
-<style scoped>
+<style>
 .server {
   border-radius: 6px;
   box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.05);

@@ -1,16 +1,13 @@
 import Vue from 'vue';
 import Vuex, { StoreOptions } from 'vuex';
 import { RootState } from './types';
-import { server } from './server/index';
+import servers from './servers';
 
 Vue.use(Vuex);
 
 const store: StoreOptions<RootState> = {
-  state: {
-    something: 'It was at this moment he knew' // a simple property
-  },
   modules: {
-    server
+    servers
   }
 };
 
