@@ -16,7 +16,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Sidebar from './components/Sidebar.vue';
 import Server from './components/Server.vue';
-import { State } from 'vuex-class';
+import { State, Action } from 'vuex-class';
 import { ServerModuleState } from '@/store/servers/types';
 
 @Component({
@@ -31,6 +31,16 @@ import { ServerModuleState } from '@/store/servers/types';
 export default class App extends Vue {
   @State('servers')
   servers: ServerModuleState | undefined;
+
+  @Action('fetchData')
+  fetchServersData: any;
+
+  /**
+   * Load data about servers when app is mounted
+   */
+  mounted() {
+    this.fetchServersData();
+  }
 }
 </script>
 
