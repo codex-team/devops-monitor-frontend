@@ -29,11 +29,17 @@ import { ServerModuleState } from '@/store/servers/types';
  * App component
  */
 export default class App extends Vue {
+  /**
+   * Representation of group of servers
+   */
   @State('servers')
   servers: ServerModuleState | undefined;
 
+  /**
+   * Function for fetching data about servers from API
+   */
   @Action('fetchData')
-  fetchServersData: any;
+  fetchServersData!: () => Promise<void>;
 
   /**
    * Load data about servers when app is mounted
