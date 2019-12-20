@@ -15,41 +15,15 @@
     </div>
     <div class="section">
       <h2 class="section__title">
-        Nginx
+        Websites
       </h2>
       <div class="section__apps">
-        <span>alpha.hawk.so</span>
-        <span class="section__apps-site--offline">alpha.ifmo.su</span>
-        <span class="section__apps-site--offline">difual.com</span>
-        <span>editorjs.io</span>
-        <span>hawk.so</span>
-        <span>ifmo.su</span>
-      </div>
-    </div>
-    <div class="section">
-      <h2 class="section__title">
-        Services
-      </h2>
-      <div class="section__service">
-        <span class="section__service-name">MongoDB</span>
-        <span class="section__container-status section__container-status--ok">:2134</span>
-      </div>
-      <div class="section__service">
-        <span class="section__service-name">Redis</span>
-        <span class="section__container-status section__container-status--error">:6000</span>
-      </div>
-    </div>
-    <div class="section">
-      <h2 class="section__title">
-        Docker
-      </h2>
-      <div class="section__container">
-        <span class="section__container-name">cmtt_section</span>
-        <span class="section__container-status section__container-status--ok">4d</span>
-      </div>
-      <div class="section__container">
-        <span class="section__container-name">cmtt_fpm</span>
-        <span class="section__container-status section__container-status--ok">4d</span>
+        <span
+          v-for="(site, index) in server.services.websites"
+          :key="index"
+          :class="{ 'section__apps-site--offline' : site.status != 'enabled' }"
+        >{{ site.name }}
+        </span>
       </div>
     </div>
   </div>
