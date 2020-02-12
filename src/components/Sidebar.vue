@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <h2 class="sidebar__title">
-      {{ header }}
+      <a href="/">{{ header }}</a>
     </h2>
     <div class="sidebar__menu">
       <a href="#">Servers Map</a>

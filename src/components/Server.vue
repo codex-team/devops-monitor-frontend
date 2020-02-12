@@ -22,8 +22,7 @@
           v-for="(site, index) in server.services.websites"
           :key="index"
           :class="{ 'section__apps-site--offline' : site.status != 'enabled' }"
-        >{{ site.name }}
-        </span>
+        >{{ site.name }}</span>
       </div>
     </div>
   </div>
