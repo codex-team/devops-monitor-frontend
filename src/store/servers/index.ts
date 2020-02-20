@@ -16,7 +16,6 @@ const state: ServerModuleState = {
       }
     }
   ]
-
 };
 
 const serverModule: Module<ServerModuleState, RootState> = {

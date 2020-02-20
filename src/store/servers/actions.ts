@@ -7,19 +7,16 @@ import { RootState } from '../types';
  * Get servers data from the back-end
  */
 const API_URL = 'https://api.devops.codex.so';
-
 const TOKEN = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZTI2YTliNzVhYjIyNjQ4MzhlODI3YTUiLCJpYXQiOjE1ODA5MDUzMzB9.0NH1KFEnv8IuVZAlPcZ7LOfmfzTsRyaPNV6f8l0xhMI';
+
+axios.defaults.headers.common.authorization = 'Bearer ' + TOKEN;
 const actions: ActionTree<ServerModuleState, RootState> = {
   /**
    * Fetch data about servers from API
    * Fetch services on every server
    */
   async fetchData({ commit }): Promise<void> {
-    const serversList = await axios.get(API_URL + '/projects', {
-      headers: {
-        authorization: 'Bearer ' + TOKEN
-      }
-    });
+    const serversList = await axios.get(API_URL + '/projects');
 
     var servers = serversList.data.data;
     /**
@@ -33,9 +30,6 @@ const actions: ActionTree<ServerModuleState, RootState> = {
       await axios.get(API_URL + '/services', {
         params: {
           projectToken: servers[i].token
-        },
-        headers: {
-          authorization: 'Bearer ' + TOKEN
         }
       }).then(service => {
         service = service.data; // get data with statusCode and other data
@@ -52,6 +46,20 @@ const actions: ActionTree<ServerModuleState, RootState> = {
       });
     }
     commit('setServersList', servers);
+  },
+
+  /**
+   * Add project to server
+   * @param serverName
+   */
+  async addServer({ commit }, serverName): Promise<void> {
+    console.log('work pls ', serverName);
+    await axios.post(API_URL + '/projects', {
+      name: serverName
+    }).then((res) => {
+      // We can get status code
+      if (res.data.statusCode != undefined && res.data.statusCode == 200) {}
+    });
   }
 };
 

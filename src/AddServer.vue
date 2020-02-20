@@ -3,7 +3,10 @@
     <Sidebar />
     <div class="servers-map">
       <Header />
-      <div class="servers-map__add-server">
+      <div
+        v-show="!serverAdded"
+        class="servers-map__add-server"
+      >
         <img
           class="add-server__image"
           src="./assets/koala_open_eyes.svg"
@@ -15,15 +18,22 @@
           Server name
         </h3>
         <input
+          v-model.trim="serverName"
           type="text"
           class="add-server__server-name"
           placeholder="codex-kepler"
         >
-        <button class="add-server__button">
+        <button
+          class="add-server__button"
+          @click="onClick"
+        >
           Add server
         </button>
       </div>
-      <div class="servers-map__add-server">
+      <div
+        v-show="serverAdded"
+        class="servers-map__add-server"
+      >
         <img
           class="add-server__image"
           src="./assets/koala_closed_eyes.svg"
@@ -32,13 +42,13 @@
           Done!
         </h2>
         <p class="add-server__text">
-          codex-kepler was added. Next you need to install the Collector script to your server.
+          {{ serverName }} was added. Next you need to install the Collector script to your server.
         </p>
         <h3 class="add-server__small-header">
           Integration token
         </h3>
         <p class="add-server__integration-token">
-          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI1ZTNhYjliOWNkNmI3ODAwMjM3OGEzNjUiLCJpYXQiOjE1ODA5MDY5Mzd9.MQXPqBMEhwRyadPteDMhvepK_sMw_tzNHNcpER7IODY
+          {{ token }}
         </p>
         <a
           class="add-server__guide"
@@ -57,6 +67,7 @@
 import { Component, Vue } from 'vue-property-decorator';
 import Sidebar from './components/Sidebar.vue';
 import Header from './components/Header.vue';
+import Server from './components/Server.vue';
 import { State, Action } from 'vuex-class';
 
 @Component({
@@ -66,9 +77,28 @@ import { State, Action } from 'vuex-class';
   }
 })
 /**
- * App component
+ * AddServer component
  */
-export default class App extends Vue {}
+export default class AddServer extends Vue {
+  public token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI1ZTNhYjliOWNkNmI3ODAwMjM3OGEzNjUiLCJpYXQiOjE1ODA5MDY5Mzd9.MQXPqBMEhwRyadPteDMhvepK_sMw_tzNHNcpER7IODY';
+  public serverName: string = '';
+  public serverAdded: boolean = false;
+
+  /**
+   * Function for add server to servers list
+   */
+  @Action('addServer')
+  addServer!: (serverName: string) => Promise<void>;
+
+  /**
+   * Add server
+   */
+  onClick(): void {
+    this.addServer(this.serverName).then(() => {
+      this.serverAdded = true;
+    });
+  }
+}
 </script>
 
 <style>

@@ -1,9 +1,13 @@
 <template>
   <div class="server">
     <div class="header">
-      <h2 class="header__title">{{ server.name }}</h2>
+      <h2 class="header__title">
+        {{ server.name }}
+      </h2>
       <span class="header__status header__status--ok" />
-      <div class="header__ip">15.213.199.12</div>
+      <div class="header__ip">
+        15.213.199.12
+      </div>
       <div class="header__menu">
         <img src="../assets/menu-icon.svg">
         <div class="header__menu-list">
@@ -18,7 +22,9 @@
       <span class="state__cpu">CPU load 12%</span>
     </div>
     <div class="section">
-      <h2 class="section__title">Websites</h2>
+      <h2 class="section__title">
+        Websites
+      </h2>
       <div class="section__apps">
         <span
           v-for="(site, index) in server.services.websites"
@@ -31,8 +37,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
-import { Server } from "@/store/servers/types";
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import { Server } from '@/store/servers/types';
 
 @Component
 /**

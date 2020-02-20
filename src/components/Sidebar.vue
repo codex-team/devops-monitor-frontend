@@ -30,7 +30,7 @@ a {
 }
 
 .sidebar {
-  min-width: 80px;
+  min-width: 110px;
   margin-right: 40px;
   padding-top: 1rem;
   font-size: 16px;
