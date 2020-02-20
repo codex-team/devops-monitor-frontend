@@ -1,12 +1,16 @@
 <template>
   <div class="server">
-    <div class="server__header">
-      <h2 class="server__header-title">
-        {{ server.name }}
-      </h2>
-      <span class="server__header-status server__header-status--ok" />
-      <div class="server__header-ip">
-        15.213.199.12
+    <div class="header">
+      <h2 class="header__title">{{ server.name }}</h2>
+      <span class="header__status header__status--ok" />
+      <div class="header__ip">15.213.199.12</div>
+      <div class="header__menu">
+        <img src="../assets/menu-icon.svg">
+        <div class="header__menu-list">
+          <a href="#">Get integration token</a>
+          <a href="#">Edit server</a>
+          <a href="#">Remove server</a>
+        </div>
       </div>
     </div>
     <div class="state">
@@ -14,9 +18,7 @@
       <span class="state__cpu">CPU load 12%</span>
     </div>
     <div class="section">
-      <h2 class="section__title">
-        Websites
-      </h2>
+      <h2 class="section__title">Websites</h2>
       <div class="section__apps">
         <span
           v-for="(site, index) in server.services.websites"
@@ -29,8 +31,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import { Server } from '@/store/servers/types';
+import { Component, Prop, Vue } from "vue-property-decorator";
+import { Server } from "@/store/servers/types";
 
 @Component
 /**
@@ -59,7 +61,7 @@ export default class ServerDetail extends Vue {
   padding: 25px;
 }
 
-.server__header {
+.header {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -67,7 +69,7 @@ export default class ServerDetail extends Vue {
   margin-bottom: 15px;
 }
 
-.server__header-title {
+.header__title {
   display: inline-block;
   margin-right: 10px;
   font-size: 18px;
@@ -78,7 +80,7 @@ export default class ServerDetail extends Vue {
   margin-right: 25px;
 }
 
-.server__header-status {
+.header__status {
   display: inline-block;
   border-radius: 50%;
   width: 10px;
@@ -86,21 +88,70 @@ export default class ServerDetail extends Vue {
   background-color: #e4e4e4;
 }
 
-.server__header-status--ok {
+.header__status--ok {
   opacity: 0.6;
   background: #059721;
 }
 
-.server__header-status--error {
+.header__status--error {
   opacity: 0.6;
   background: #bf0000;
 }
 
-.server__header-ip {
+.header__ip {
   margin-left: auto;
   font-size: 14px;
   opacity: 0.6;
   display: inline-block;
+}
+
+.header__menu {
+  padding: 5px 5px 5px 20px;
+  width: 39px;
+  display: inline-block;
+  position: relative;
+}
+
+.header__menu-list {
+  display: none;
+  width: 180px;
+  font-size: 13px;
+  position: absolute;
+  top: 27px;
+  right: -10px;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.13);
+  border: solid 1px rgba(151, 151, 151, 0.3);
+  background: #ffffff;
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.header__menu-list a {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  padding: 10px 15px;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+}
+
+.header__menu-list a:hover {
+  background: #f5f5f5;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.header__menu:hover .header__menu-list{
+  display: block;
+}
+
+.header__menu-list:after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(to bottom, #000, #fff);
+  width: 12px;
+  height: 10px;
+  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
+  top: -10px;
+  right: 16px;
+  z-index: 2;
 }
 
 .state {
