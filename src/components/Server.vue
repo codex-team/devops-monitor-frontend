@@ -113,23 +113,26 @@ export default class ServerDetail extends Vue {
 
 .header__menu {
   padding: 5px 5px 5px 20px;
-  width: 39px;
+  width: 40px;
   display: inline-block;
   position: relative;
 }
 
 .header__menu-list {
-  display: none;
+  display: block;
+  visibility: hidden;
   width: 180px;
   font-size: 13px;
   position: absolute;
-  top: 27px;
-  right: -10px;
+  top: 17px;
+  right: -10.5px;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.13);
   border: solid 1px rgba(151, 151, 151, 0.3);
   background: #ffffff;
   z-index: 1;
   border-radius: 5px;
+  transition: 0.2s;
+  opacity: 0;
 }
 
 .header__menu-list a {
@@ -145,7 +148,9 @@ export default class ServerDetail extends Vue {
 }
 
 .header__menu:hover .header__menu-list{
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  top: 27px;
 }
 
 .header__menu-list:after {
