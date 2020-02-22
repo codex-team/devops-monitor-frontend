@@ -29,7 +29,7 @@ export default class Header extends Vue {}
 .header__add-server {
   text-transform: uppercase;
   font-size: 11px;
-  padding: 6px 8px;
+  padding: 6px 9px;
   color: rgba(0, 0, 0, 0.6);
   border-radius: 3px;
   border: solid 1px rgba(0, 0, 0, 0.1);

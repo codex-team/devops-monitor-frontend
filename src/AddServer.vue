@@ -41,7 +41,9 @@
         <h2 class="add-server__header add-server__header--little-margin">
           Done!
         </h2>
-        <p class="add-server__text">
+        <p
+          class="add-server__text"
+        >
           {{ serverName }} was added. Next you need to install the Collector script to your server.
         </p>
         <h3 class="add-server__small-header">
@@ -80,7 +82,9 @@ import { State, Action } from 'vuex-class';
  * AddServer component
  */
 export default class AddServer extends Vue {
-  public token: string = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI1ZTNhYjliOWNkNmI3ODAwMjM3OGEzNjUiLCJpYXQiOjE1ODA5MDY5Mzd9.MQXPqBMEhwRyadPteDMhvepK_sMw_tzNHNcpER7IODY';
+  public token: string =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOiI1ZTNhYjliOWNkNmI3ODAwMjM3OGEzNjUiLCJpYXQiOjE1ODA5MDY5Mzd9.MQXPqBMEhwRyadPteDMhvepK_sMw_tzNHNcpER7IODY';
+
   public serverName: string = '';
   public serverAdded: boolean = false;
 
@@ -103,10 +107,9 @@ export default class AddServer extends Vue {
 
 <style>
 @import "~minireset.css/minireset.min.css";
-@import url('https://fonts.googleapis.com/css?family=PT+Mono&display=swap');
 
 .app {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 13px;
   color: #000000;
   padding: 30px;
@@ -145,6 +148,7 @@ a {
   font-size: 17px;
   color: #000;
   margin-bottom: 30px;
+  font-weight: 500;
 }
 
 .add-server__small-header {
@@ -153,6 +157,8 @@ a {
   color: #000;
   opacity: 0.6;
   margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
 }
 
 .add-server__server-name {
@@ -168,12 +174,16 @@ a {
   display: block;
   font-size: 14px;
   border-radius: 3px;
-  padding: 10px;
+  padding: 9px 12px;
   color: #fff;
   outline: none;
   background-color: #43b1f6;
   border: 0;
   cursor: pointer;
+}
+
+.add-server__button:hover {
+  background-color: #1aa0f4;
 }
 
 .add-server__header--little-margin {
@@ -183,10 +193,11 @@ a {
 .add-server__text {
   font-size: 15px;
   margin-bottom: 15px;
+  line-height: 1.47;
 }
 
 .add-server__integration-token {
-  font-family: 'PT Mono', 'Roboto', sans-serif;
+  font-family: "PT Mono", "Roboto", sans-serif;
   width: 260px;
   border-radius: 3px;
   border: solid 1px rgba(0, 0, 0, 0.15);
@@ -195,19 +206,22 @@ a {
   word-wrap: break-word;
   padding: 9px 10px;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 .add-server__guide {
   display: inline-block;
   font-size: 15px;
   color: #0080d0;
-  border-bottom: 1px dashed #0080d0;
+  border-bottom: 1px dotted #00807f;
   margin-bottom: 15px;
+  line-height: 1.47;
 }
 
 .add-server__servers-list {
   display: block;
   font-size: 15px;
   color: rgba(0, 0, 0, 0.6);
+  line-height: 1.47;
 }
 </style>

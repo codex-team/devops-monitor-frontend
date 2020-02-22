@@ -70,6 +70,7 @@ a {
 }
 
 .servers-map {
+  min-width: 450px;
   display: flex;
   flex-wrap: wrap;
   border-left: 1px solid #e4e4e4;

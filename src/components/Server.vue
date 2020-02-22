@@ -6,10 +6,13 @@
       </h2>
       <span class="header__status header__status--ok" />
       <div class="header__ip">
-        15.213.199.12
+        {{ server.services["public-ip"] !== undefined && server.services["public-ip"].ip !== undefined ? server.services["public-ip"].ip : "" }}
       </div>
       <div class="header__menu">
-        <img src="../assets/menu-icon.svg">
+        <img
+          class="header__menu-icon"
+          src="../assets/menu-icon.svg"
+        >
         <div class="header__menu-list">
           <a href="#">Get integration token</a>
           <a href="#">Edit server</a>
@@ -72,7 +75,7 @@ export default class ServerDetail extends Vue {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin: -2px 0 15px 0;
 }
 
 .header__title {
@@ -96,7 +99,7 @@ export default class ServerDetail extends Vue {
 
 .header__status--ok {
   opacity: 0.6;
-  background: #059721;
+  background: #00c828;
 }
 
 .header__status--error {
@@ -112,10 +115,12 @@ export default class ServerDetail extends Vue {
 }
 
 .header__menu {
-  padding: 5px 5px 5px 20px;
-  width: 40px;
+  padding: 5px 10px 5px 10px;
+  margin: 0 -10px 0 15px;
+  letter-spacing: 0.4px;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 .header__menu-list {
@@ -129,8 +134,8 @@ export default class ServerDetail extends Vue {
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.13);
   border: solid 1px rgba(151, 151, 151, 0.3);
   background: #ffffff;
-  z-index: 1;
-  border-radius: 5px;
+  z-index: 2;
+  border-radius: 7px;
   transition: 0.2s;
   opacity: 0;
 }
@@ -138,13 +143,37 @@ export default class ServerDetail extends Vue {
 .header__menu-list a {
   display: block;
   color: rgba(0, 0, 0, 0.6);
-  padding: 10px 15px;
-  border-bottom: 1px solid rgba(151, 151, 151, 0.3);
+  padding: 10px 15px 10px 0;
+  margin-left: 15px;
+  border-top: 1px solid rgba(151, 151, 151, 0.07);
+}
+
+.header__menu-list a:first-child {
+  padding-top: 15px;
+  position: relative;
+  border-radius: 7px 7px 0 0;
+  border: none;
+}
+
+.header__menu-list a:last-child {
+  padding-bottom: 15px;
+  border-radius: 0 0 7px 7px;
 }
 
 .header__menu-list a:hover {
   background: #f5f5f5;
+  border-color: #f5f5f5;
   color: rgba(0, 0, 0, 0.75);
+  padding-left: 15px;
+  margin: 0;
+}
+
+.header__menu-list a:hover + a{
+  border-color: #fff;
+}
+
+.header__menu-list a:first-child:hover:after {
+  background: #f5f5f5;
 }
 
 .header__menu:hover .header__menu-list{
@@ -153,16 +182,26 @@ export default class ServerDetail extends Vue {
   top: 27px;
 }
 
-.header__menu-list:after {
+.header__menu-icon {
+  width: 3px;
+}
+
+.header__menu:hover .header__menu-icon {
+  opacity: 0.6;
+}
+
+.header__menu-list a:first-child:after {
   content: '';
   position: absolute;
-  background: linear-gradient(to bottom, #000, #fff);
-  width: 12px;
-  height: 10px;
-  clip-path: polygon(50% 50%, 0 100%, 100% 100%);
-  top: -10px;
-  right: 16px;
-  z-index: 2;
+  background: #fff;
+  border-top: solid 1px rgba(151, 151, 151, 0.3);
+  border-left: solid 1px rgba(151, 151, 151, 0.3);
+  width: 7px;
+  height: 7px;
+  top: -4px;
+  right: 17.5px;
+  z-index: -1;
+  transform: rotate(45deg);
 }
 
 .state {
@@ -201,8 +240,9 @@ export default class ServerDetail extends Vue {
 .section__title {
   margin-bottom: 15px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   opacity: 0.6;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
@@ -225,7 +265,7 @@ export default class ServerDetail extends Vue {
 
 .section__container-status--ok {
   opacity: 0.6;
-  color: #059721;
+  color: #00c828;
 }
 
 .section__container-status--error {

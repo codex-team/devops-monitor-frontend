@@ -23,9 +23,9 @@ const actions: ActionTree<ServerModuleState, RootState> = {
      * Get services and push it into server object
      */
 
-    console.log('Servers.data.data ', serversList.data.data[0]);
+    // console.log('Servers.data.data ', serversList.data.data[0]);
     for (let i = 0; i < servers.length; i++) {
-      console.log('Server token ', servers[i].token);
+      // console.log('Server token ', servers[i].token);
 
       await axios.get(API_URL + '/services', {
         params: {
