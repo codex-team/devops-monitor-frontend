@@ -6,7 +6,7 @@
       </h2>
       <span class="header__status header__status--ok" />
       <div class="header__ip">
-        {{ server.services["public-ip"] !== undefined && server.services["public-ip"].ip !== undefined ? server.services["public-ip"].ip : "" }}
+        {{ server.services.publicIp !== undefined && server.services.publicIp.ip !== undefined ? server.services.publicIp.ip : "" }}
       </div>
       <div class="header__menu">
         <img
