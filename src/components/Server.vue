@@ -145,7 +145,7 @@ export default class ServerDetail extends Vue {
   color: rgba(0, 0, 0, 0.6);
   padding: 10px 15px 10px 0;
   margin-left: 15px;
-  border-top: 1px solid rgba(151, 151, 151, 0.07);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
 }
 
 .header__menu-list a:first-child {
@@ -169,7 +169,9 @@ export default class ServerDetail extends Vue {
 }
 
 .header__menu-list a:hover + a{
-  border-color: #fff;
+  border-color: #f5f5f5;
+  padding-left: 15px;
+  margin: 0;
 }
 
 .header__menu-list a:first-child:hover:after {
@@ -184,10 +186,11 @@ export default class ServerDetail extends Vue {
 
 .header__menu-icon {
   width: 3px;
+  opacity: 0.6;
 }
 
 .header__menu:hover .header__menu-icon {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .header__menu-list a:first-child:after {

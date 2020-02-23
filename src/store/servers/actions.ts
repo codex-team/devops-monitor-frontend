@@ -34,10 +34,12 @@ const actions: ActionTree<ServerModuleState, RootState> = {
       }).then(service => {
         service = service.data; // get data with statusCode and other data
         let payload = [];
+        const dataLen = service.data.length;
+        console.log(service);
 
-        if (service.data.length != 0) {
+        if (dataLen != 0) {
           // if we have useful payload
-          payload = service.data[0].payload;
+          payload = service.data[dataLen - 1].payload;
         } else {
           // if data is empty
           servers[i].services = {};
