@@ -8,11 +8,7 @@ import { RootState } from '../types';
  * Initial module state
  */
 const state: ServerModuleState = {
-  list: [
-    {
-      name: 'codex-kepler'
-    }
-  ]
+  list: []
 };
 
 const serverModule: Module<ServerModuleState, RootState> = {

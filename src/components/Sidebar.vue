@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar">
     <h2 class="sidebar__title">
-      {{ header }}
+      <a href="/">{{ header }}</a>
     </h2>
     <div class="sidebar__menu">
       <a href="#">Servers Map</a>
@@ -30,7 +30,7 @@ a {
 }
 
 .sidebar {
-  min-width: 80px;
+  min-width: 110px;
   margin-right: 40px;
   padding-top: 1rem;
   font-size: 16px;
