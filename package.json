@@ -8,7 +8,7 @@
     "lint": "eslint src/ --ext .js --ext .ts --ext .vue --fix"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "minireset.css": "^0.0.6",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
